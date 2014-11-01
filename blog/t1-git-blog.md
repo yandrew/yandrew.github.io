@@ -1,30 +1,21 @@
-<!-- This template is in markdown, not html, so
-  it will not render beautifully when you copy and
-  paste it into your github.io site, but it will at
-  least be published. Next week you'll be creating a
-  blog template using HTML and CSS and you'll be able
-  to copy and paste the blog posts from week 1 in there
-  to make them pretty next week.
+#DevBootcamp Phase 0 – Week 1
 
-  For now, please replace the title, subtitle (if desired),
-  and date with the text you would like. Markdown is pretty
-  simple, so you can just feel free to type. =) You'll want
-  to delete this chunk of a comment as well. -->
+Version Control and GitHub
+
+October 31, 2014
 
 
-Title
+I just started week 1 of Phase 0 with DevBootcamp. I’ve actually learned quite a lot. I used to be confused about how GitHub worked but now it’s very clear to me. Here’s what I’ve learned so far.
 
-Subtitle
 
-Date
 
-Paragraph 1
+**Version Control is a pretty much an essential tool to programmers. Version control is a way to keep track of changes you make as you write your program or edit your files. Let’s say you’ve added some code to a program and when you try to run the program, it crashes. Good thing you’ve got Version Control. You can now go back to the previously saved version and undo your mistakes. You can think of it like a video game. You wouldn’t want to play through the whole video game without making any game saves. Well I think I did have a friend play a Final Fantasy game without a memory card; he would leave his ps2 on all day and night so he wouldn’t lose his place in the game. Anyways, your many sleepless nights of gameplay would go to waste once you die. You would make a checkpoint save as often as you can so you don’t lose that much progress if you do die. You want to do the same thing while writing a program and make saves as often as you can.
 
-Paragraph 2
+Enter **Git**
+Git is version control system. It’s a free software can be added to most operating systems. Git has become one of the most popular version control systems for software developers. What makes Git awesome? It saves the project as a snapshot of all the individual files. Git lets you do this as many times as you want and you can always go back to a previous state of a snapshot. In the Git world, a save or snapshot is called a “commit”. Each time you make a commit, it saves the state of the file at that time and assigns it a specific code that you can always reference later.
 
-Paragraph 3
+  “What if I want to work on the same project with other people?”
 
-Add as many paragraphs as you want!!!
-
+This is where GitHub comes in. GitHub lets a large number of developers collaborate on the same project. GitHub is kind of like a cloud where it stores your project files  and anyone can download them with the proper permissions. But it’s a lot more than that. It works by using the git system to track the git commits (saves). Basically everyone makes their change and pushes the changes back to the remote file at GitHub.com. It lets anybody with internet access to work together at the same time on the same file without causing errors. GitHub does a great job tracking changes and undoing them too if you needed. What’s nice about GitHub is that it’s become more than just a file collaboration website. It has become a community for developers and a haven for open source programs, programs that anyone can contribute to and modify. People can check your work or help you out on a program you’re creating.
 
 
