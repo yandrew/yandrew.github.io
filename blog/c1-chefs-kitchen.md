@@ -1,6 +1,8 @@
 
 #DBC Phase 0 - Week 1
+
 ##DBC Thoughts
+
 November 1, 2014
 
     I’m pretty excited to start DBC. I think that DBC is a great new way to prepare you for a career. I think that traditional colleges do a poor job doing this. DBC gives you real world problems and you’re set in an environment similar to the work setting.  I believe DBC teaches you the tools to learn a programming language in a short amount of time. Buts it’s not just about learning the language, it’s more everything else that goes into being a great developer including soft skills. I think that the fast paced environment, where all the students are just as enthusiastic as me about learning the material, will just push me even harder to excel. 
