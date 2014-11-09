@@ -1,0 +1,67 @@
+#home_button {
+    height: 50px;
+    width: 50px;
+}
+#face-pic {
+    height: 150px;
+    width: 150px;
+    }
+#header {
+    width: 90%;
+    display: block;
+    border-bottom: 1px solid black;
+    }
+#blogsite-title {
+    font-size: 18px;
+    float: center;
+}
+#search-bar {
+    text-align: right;
+}
+
+.blog-post {
+    width: 90%;
+    border-bottom: 1px solid black;
+    display: inline-block;
+}
+
+.blog-title {
+    font-size: 18px;
+    text-align: left;
+}
+
+.post-pic {
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    text-align: left;
+}
+
+.content {
+    display: inline-block;
+}
+
+.leftDiv {
+    float: left;
+    width: 20%;
+    display: inline-block;
+}
+
+.rightDiv {
+    float: right;
+    width: 80%;
+    display: inline-block;
+}
+
+.footer {
+
+    display: inline-block;
+    float: center;
+    width: 20%;
+}
+
+.footer-icon {
+    height: 50px;
+    width: 50px;
+    text-align: right;
+}
