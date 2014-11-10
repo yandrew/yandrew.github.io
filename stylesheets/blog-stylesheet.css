@@ -1,28 +1,53 @@
 #home_button {
-    height: 50px;
-    width: 50px;
+    margin: 5px 0 0 5px;
+  display: inline-block;
+  position: relative;
 }
+
 #face-pic {
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
+    float: right;
+  margin: 5px 0 10px 0;
+  border: solid black 1px;
     }
 #header {
-    width: 90%;
-    display: block;
-    border-bottom: 1px solid black;
-    }
+  display: block;
+   width: 100%;
+    border: solid black 1px;
+    background-color: grey;
+    position: relative;
+}
 #blogsite-title {
     font-size: 18px;
-    float: center;
+  position: absolute;
+    margin-left: 50%
 }
-#search-bar {
-    text-align: right;
+
+#content {
+  margin-right: 25px
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+
+
+.link-readmore {
+
 }
 
 .blog-post {
-    width: 90%;
-    border-bottom: 1px solid black;
+    width: 100%;
     display: inline-block;
+    padding: 20px 50px 20px 20px;
+    border-top: 1px solid black;
 }
 
 .blog-title {
@@ -33,35 +58,25 @@
 .post-pic {
     height: 200px;
     width: 200px;
-    display: inline-block;
-    text-align: left;
-}
-
-.content {
-    display: inline-block;
-}
-
-.leftDiv {
     float: left;
-    width: 20%;
-    display: inline-block;
+    margin-right: 10px;
+    margin-bottom:5px;
 }
 
-.rightDiv {
-    float: right;
-    width: 80%;
-    display: inline-block;
-}
+
 
 .footer {
-
+  clear: left;
+  height: 100px;
+    width: 100%;
+    margin: 20px auto;
     display: inline-block;
-    float: center;
-    width: 20%;
+  padding: 5px 5px 5px 5px;
+  border-top: 1px solid black;
 }
 
 .footer-icon {
+    margin: 10px auto 0 auto;
     height: 50px;
     width: 50px;
-    text-align: right;
 }
