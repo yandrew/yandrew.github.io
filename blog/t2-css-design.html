@@ -7,7 +7,7 @@
 <body>
 
     <div id="header clearfix">
-       <img id="face-pic" src="http://www.onbile.com/info/wp-content/uploads/2012/03/CSS+HTML.png"/>
+       <img id="face-pic" src="../imgs/profile-face.jpg"/>
         <FORM id="home_button" METHOD="LINK" ACTION="http://yandrew.github.io/">
         <INPUT TYPE="submit" VALUE="Home">
         </FORM>
@@ -18,15 +18,46 @@
 
 <!--post begin -->
     <div class="blog-post">
-        <img class="post-pic" src="http://www.onbile.com/info/wp-content/uploads/2012/03/CSS+HTML.png"/>
-        <h2 class="blog-title"><!-- Blog title --></h2>
-        <h3>DBC Phase 0 Week #</h3>
-        <p><!-- date --></p>
+        <img class="post-pic" src="http://image.slidesharecdn.com/css101-131116001735-phpapp01/95/css-101-4-638.jpg?cb=1384582732"/>
+        <h2 class="blog-title"><!-- Blog title -->HTML/CSS: Class vs ID</h2>
+        <h3>DBC Phase 0 Week #2</h3>
+        <p><!-- date -->November 9, 2014</p>
         <p id="content"><!-- insert post here -->
-        <span  class="link-readmore">
-            <a href="link">read more</a>
-        </span>
-    </p>
+            In HTML / CSS there are elements can be tagged with a specific ID or Class name. IDs are unique and are only supposed to be declared on one element in a document. Classes are not unique. A specific class can be used on more than one element. Also each element can also have more than one class. Let's say you had a list of items each in a "li" tag (which lists them out in bulletpoint form) and you placed each one in a class.</p>
+
+            <blockquote>
+                            <pre>
+                                <code>
+                    &lt;div&gt;<br />
+                &lt;li class=&quot;pets&quot;&gt;cats&lt;/li&gt;<br />
+                &lt;li class=&quot;pets&quot;&gt;dogs&lt;/li&gt;<br />
+                &lt;li class=&quot;pets&quot;&gt;rabbits&lt;/li&gt;<br />
+                &lt;li class=&quot;pets&quot;&gt;bunnys&lt;/li&gt;<br />
+                &lt;li class=&quot;pets&quot;&gt;hermit crab&lt;/li&gt;<br />
+            &lt;/div&gt;
+                                </code>
+                            <pre>
+            </blockquote>
+
+ <p id="content">If you wanted to change the font properties of one of the list you can just add another class to it without declaring with the “class=” like this:</p>
+<br/>
+<blockquote>
+    <pre><code>&lt;div&gt;&lt;br /&gt;<br />
+                &lt;li class=&quot;pets feline&quot;&gt;cats&lt;/li&gt;&lt;br /&gt;<br />
+                &lt;li class=&quot;pets&quot;&gt;dogs&lt;/li&gt;&lt;br /&gt;<br />
+                &lt;li class=&quot;pets&quot;&gt;rabbits&lt;/li&gt;&lt;br /&gt;<br />
+                &lt;li class=&quot;pets&quot;&gt;bunnys&lt;/li&gt;&lt;br /&gt;<br />
+                &lt;li class=&quot;pets&quot;&gt;hermit crab&lt;/li&gt;&lt;br /&gt;<br />
+            &lt;/div&gt;</code></pre>
+</blockquote>
+<p id="content"> Classes  exist so you can reference back to them later without typing the whole block of css code. The CSS code lets you modify and change the font or color or even background for the element.
+IDs are really specific and you only apply the CSS to that very element. That ID won't be referenced anywhere else in the document.</p>
+
+<p id="content">It's like serial numbers vs. barcodes. A serial number on a product like a laptop is unique. There's only one laptop with that specific serial number. The box it came with probably also had a barcode. That bar code is not necessarily specific to that laptop. There could be more than one laptop with the same bar code. Packages / boxes always come with more than one barcode also. Classes are like barcodes and IDs are like serial numbers. </p>
+
+
+
+
    </div>
 <!-- post end -->
 
@@ -39,11 +70,13 @@
 
 
     <div class="footer clearfix">
-        <a href="http://www.facebook.com"><img class="footer-icon" src="http://www.urbansolar.org.uk/images/fb.png"/></a>
-        <a href="#"><img class="footer-icon" src="http://seven50.org/wp-content/uploads/2014/08/twitter-icon.png"/></a>
-        <a href="#"><img class="footer-icon" src="http://seven50.org/wp-content/uploads/2014/08/twitter-icon.png"/></a>
-        <a id="email" href="mailto:email">Email me: Email@email.com</a>
+        <a href="https://www.linkedin.com/in/yandrew"><img class="footer-icon" src="../imgs/linkedin.png"/></a>
+        <a href="https://twitter.com/yandrew"><img class="footer-icon" id="twitter" src="../imgs/Twitter_logo.png"/></a>
+        <a href="https://github.com/yandrew"><img id="github" class="footer-icon" src="../imgs/GitHub_Logo.png"/></a>
+        <a id="email" href="mailto:yandrew@gmail.com">Email me</a>
     </div>
+
+
 
 
 </body>
