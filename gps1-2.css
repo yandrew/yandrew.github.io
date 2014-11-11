@@ -1,0 +1,47 @@
+body{
+            margin:0px;
+            padding:0px;
+        }
+
+        img{
+            padding:0 10px;
+        }
+
+        div{
+            font-family: Gotham;
+            background-color: aliceblue;
+            color: black;
+            width: 80%;
+            margin:5px auto;
+        }
+
+        span{
+            border: 1px solid black;
+
+        }
+        .heading{
+            font-weight:bold;
+        }
+        #content{
+
+            top: 300px;
+            padding: 10px 0px;
+        }
+        #john{
+            height:140px;
+        }
+        #names{
+            font-size:20px;
+            text-align:center;
+            padding:5px 0px;
+        }
+        #title{
+            font-size:28px;
+            text-align:center;
+            margin-top: 10px;
+        }
+        #wrapper{
+            background-color: blue;
+            padding:10px;
+            height:100%;
+        }
