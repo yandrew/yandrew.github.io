@@ -93,12 +93,12 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { }
 
 .clearfix {display: inline-block;}
 a:link {
-  text-decoration: none
+  text-decoration: none;
   color: black;
 }
 
 .link-readmore a:link{
-text-decoration: none
+text-decoration: none;
 color: #00868B;
 }
 

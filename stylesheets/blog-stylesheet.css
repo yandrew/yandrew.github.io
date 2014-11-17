@@ -38,12 +38,12 @@
 
 .clearfix {display: inline-block;}
 a:link {
-  text-decoration: none
+  text-decoration: none;
   color: black;
 }
 
 .link-readmore a:link{
-text-decoration: none
+text-decoration: none;
 color: #00868B;
 }
 
@@ -56,7 +56,7 @@ color: #66CDAA;
 .blog-post {
     width: 100%;
     display: inline-block;
-    padding: 20px 50px 20px 20px;
+    /*padding: 20px 50px 20px 20px;*/
     border-top: 1px solid black;
 }
 
@@ -70,6 +70,7 @@ color: #66CDAA;
     float: left;
     margin-right: 10px;
     margin-bottom:5px;
+    margin-top: 10px;
 }
 
 
@@ -80,7 +81,7 @@ color: #66CDAA;
     width: 100%;
     margin: 20px auto;
     display: inline-block;
-  padding: 5px 5px 5px 5px;
+  /*padding: 5px 5px 5px 5px;*/
   border-top: 1px solid black;
 }
 
@@ -90,6 +91,10 @@ color: #66CDAA;
 
 }
 
+body {
+  font-family: Verdana;
+  font-size: 14;
+}
 
 pre{
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
