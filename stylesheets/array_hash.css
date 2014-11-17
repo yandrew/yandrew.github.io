@@ -47,6 +47,8 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { }
   pre .atv, code .atv { color: #060; }
 }
 
+}
+
 #home_button {
     margin: 5px 0 0 5px;
   display: inline-block;
@@ -99,7 +101,7 @@ a:link {
 
 .link-readmore a:link{
 text-decoration: none;
-color: #00868B;
+color: #f95010;
 }
 
 .link-readmore a:hover{

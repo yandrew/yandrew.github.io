@@ -1,7 +1,13 @@
+.blogpost a:visited {
+  text-decoration: none;
+  color: green;
+}
+
 #home_button {
     margin: 5px 0 0 5px;
   display: inline-block;
   position: relative;
+  background-color: #f86347;
 }
 
 #face-pic {
@@ -19,9 +25,13 @@
     position: relative;
 }
 #blogsite-title {
-    font-size: 18px;
+  font-family: Verdana;
+    font-size: 24px;
   position: absolute;
-    margin-left: 50%
+    margin-left: 35%;
+    padding: 2px;
+    color:#3153f8;
+    border: 3px blue solid;
 }
 
 #content {
@@ -44,11 +54,30 @@ a:link {
 
 .link-readmore a:link{
 text-decoration: none;
-color: #00868B;
+
+color: #f95010;
 }
 
-.link-readmore a:hover{
+.blog-post a:link {
+  text-decoration: none;
+  color: #417fb0;
+}
+
+
+.blog-post a:visited {
+  text-decoration: none;
+  color: #417fb0;
+}
+.blog-post a:hover{
 color: #66CDAA;
+}
+
+.blog-title{
+  font-size: 28px;
+}
+.blog-title a:hover {
+  font-size: 30px;
+  font-style:italic;
 }
 
 
@@ -61,7 +90,7 @@ color: #66CDAA;
 }
 
 .blog-title {
-    font-size: 18px;
+    font-size: 24px;
     text-align: left;
 }
 
@@ -73,8 +102,17 @@ color: #66CDAA;
     margin-top: 10px;
 }
 
-.content{
-  margin-right: 25px;
+.footer a:link {
+  text-decoration: none;
+  color: #417fb0;
+}
+.footer a:visited {
+  text-decoration: none;
+  color: #417fb0;
+}
+.footer a:hover{
+color: #66CDAA;
+font-size: 20px;
 }
 
 .footer {
@@ -90,12 +128,15 @@ color: #66CDAA;
 .footer-icon {
     margin: 10px auto 0 auto;
     height: 50px;
+}
 
+.readmore {
+  font-size: 18px;
 }
 
 body {
   font-family: Verdana;
-  font-size: 14;
+  background-color: #e6e548
 }
 
 pre{
