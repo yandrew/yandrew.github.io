@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Arrays and Hashes</title>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<link rel="stylesheet" type="text/css" href="../stylesheets/array_hash.css"></head>
+<body>
+
+    <div id="header clearfix">
+       <img id="face-pic" src="../imgs/profile-face.jpg"/>
+        <FORM id="home_button" METHOD="LINK" ACTION="http://yandrew.github.io/">
+        <INPUT TYPE="submit" VALUE="Andrew's Homepage">
+        </FORM>
+        <FORM id="home_button" METHOD="LINK" ACTION="http://yandrew.github.io/blog/index.html">
+        <INPUT TYPE="submit" VALUE="Blogs">
+        </FORM>
+    <p id="blogsite-title"><!--Blog Title-->Andrew Yan's Technial Blog</p>
+    </div>
+
+<!-- end of header -->
+
+<!--post begin -->
+    <div class="blog-post">
+        <img class="post-pic" src="../imgs/Breakfast_img.jpg"/>
+        <h2 class="blog-title"><!-- Blog title -->Arrays and Hashes</h2>
+        <h3>DBC Phase 0 Week #3</h3>
+        <p><!-- date -->November 15, 2014</p>
+        <p id="content"> 
+            So what is an array or a hash? Sounds like a Star Trek weapon and some breakfast food. They are both objects in the programming world, specifically in the language Ruby. Both have their own uses. Let's say you're a planning a party and you wanted to keep track of guest list. How would you be able to do this in a program? It might be helpful to make a list. 
+
+        <p><pre class="prettyprint">
+        guest_list = ["Andrew", "Kendi", "Kevin", "Daniel", "Monica", "Greg", "Goldie"]
+        puts guest_list[0]
+        puts guest_list[3]
+        puts guest_list[4]
+        
+        ------------
+        
+        #=>
+        Andrew
+        Daniel
+        Monica  
+            </pre>
+        </p>
+        <p id="content">
+            That's what an array is. It's an ordered list. You can make the list as large as you want and you can assign "strings" (which are words) or numbers. The array is like a row in an excel sheet, where there are slots which you can fill with numbers or words. I made a array here called guest_list and I put in the names of the guests in it. When I told the computer puts (which means to print it out to the screen) guest_list[0]. This means get the object in the 0th position of the list. In computer talk, everything starts with 0 index or position instead of 1st position and goes up from there. Since "Andrew was in the 0 index position of the array, it displayed Andrew. "guest_list[3]" displays "Daniel" because it has an index of 3 even though that's the 4th position. 
+        </p>
+
+        <p><pre class="prettyprint">
+            guest_list2 = guest_list.sort
+            => ["Andrew", "Daniel", "Goldie", "Greg", "Kendi", "Kevin", "Monica"]</pre>
+        </p>    
+        <p id="content">
+            As shown above, we can create a new array thats sorted alphabetically. There are many other things you can do arrays from choosing just one item from it to adding items to the array as shown here: 
+        </p>
+        <p id="content">
+            I added "Wilson" to the list, when "pushing" a new item to the array, it gets appended to the end of the array. 
+        </p>
+    
+
+    
+
+        <p><pre class="prettyprint">
+        guest_list2 << "Wilson"
+        => ["Andrew", "Daniel", "Goldie", "Greg", "Kendi", "Kevin", "Monica", "Wilson"]
+            </pre>
+        </p>
+
+
+        <p id="content">This is useful for when you want to ask the user to type in a name that is then added to the array: </p>
+        <p><pre class="prettyprint">
+        guest_list2 << gets.chomp
+        puts "-----Guest List-----"
+        puts guest_list2.sort
+        
+        ------------
+        
+        #=>
+        Name to be added to the list:
+         John
+        -----Guest List-----
+        Andrew
+        Daniel
+        Goldie
+        Greg
+        John
+        Kendi
+        Kevin
+        Monica
+        Wilson
+        </pre>
+        </p>
+        <p id="content">
+            Hashes, what are they good for? Well, let's look at what a "hash" is first. It's basically an array but instead of calling the slot number for the elements, it has a "key" (label) for each "value" or element. So everything comes in pairs in a hash. 
+        </p>
+        <p>
+            <pre class="prettyprint">
+        breakfast = Hash["eggs", 4, "toast", 2, "sausages", 4, "bacon", 6, "orange juice", 2]
+        
+        breakfast.each do |item, count|
+        puts "We need #{count} #{item}"
+        end
+
+        #=>
+        We need 2 orange juice
+        We need 4 eggs
+        We need 6 bacon
+        We need 2 toast
+        We need 4 sausages
+        => {"orange juice"=>2, "eggs"=>4, "bacon"=>6, "toast"=>2, "sausages"=>4}
+        
+        ---------
+
+        breakfast["sausages"]
+        => 4
+        </pre>
+        </p>
+        <p id="content">
+            Here I made a new Hash called breakfast and I put in a list of pairs of breakfast items and how much we need for each. The key is first then it's followed by the value. I then used the ".each" method and went though each pair and printed out what we needed. Hashes are useful for when you want to keep track of 2 types of items that are related to each other. Or if I just wanted to know how many "sausages" I needed, you can just call the key and it'll show the value which is 4 as shown above. 
+        </p>
+
+        <p id="content">
+            Hashes are great for when order of the list is not needed and it's more based on the item name or type. Both Hashes and Arrays are useful for difffent needs. Arrays are better for keeping track of things in order and more for a basic single list. Hashes are like 2 arrays linked together and it's good for keeping track of your list with labels instead of just the index numbers. 
+        </p>
+   </div>
+<!-- post end -->
+
+
+
+
+
+<!-- footer -->
+
+
+
+    <div class="footer clearfix">
+        <a href="https://www.linkedin.com/in/yandrew"><img class="footer-icon" src="../imgs/linkedin.png"/></a>
+        <a href="https://twitter.com/yandrew"><img class="footer-icon" id="twitter" src="../imgs/Twitter_logo.png"/></a>
+        <a href="https://github.com/yandrew"><img id="github" class="footer-icon" src="../imgs/GitHub_Logo.png"/></a>
+        <a id="email" href="mailto:yandrew@gmail.com">Email me</a>
+    </div>
+
+
+</body>
+</html>
