@@ -73,7 +73,9 @@ color: #66CDAA;
     margin-top: 10px;
 }
 
-
+.content{
+  margin-right: 25px;
+}
 
 .footer {
   clear: left;
