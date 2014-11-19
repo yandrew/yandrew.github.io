@@ -64,7 +64,7 @@ color: #f95010;
 
 .blog-post a:link {
   text-decoration: none;
-  color: #F9270C;
+  color: #e6220b;
 }
 
 
@@ -89,7 +89,7 @@ color: #66CDAA;
 .blog-post {
     width: 100%;
     display: inline-block;
-    /*padding: 20px 50px 20px 20px;*/
+    /*padding: 20px 50px 20px 20px;*/ 
     border-top: 1px solid black;
     background-color: rgba(240, 239, 237, 0.55);
 }
