@@ -17,11 +17,9 @@
   margin: 5px 0 10px 0;
   border: solid black 1px;
     }
-#header {
-  display: block;
+.header {
+  display: inline-block;
    width: 100%;
-    border: solid black 1px;
-    background-color: grey;
     position: relative;
 }
 #blogsite-title {
@@ -64,7 +62,7 @@ color: #f95010;
 
 .blog-post a:link {
   text-decoration: none;
-  color: #e6220b;
+  color: #a93526;
 }
 
 
@@ -84,14 +82,26 @@ color: #66CDAA;
   font-style:italic;
 }
 
-
+.center-wrapper{
+  background-color: rgba(240, 239, 237);
+  background-color: rgba(240, 239, 237, 0.55);
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  /*position: relative;*/
+  top: 150px;
+  padding: 10px;
+}
 
 .blog-post {
-    width: 100%;
-    display: inline-block;
+    /*top: 150px;
+    position: relative;*/
+    /*display: inline-block;*/
     /*padding: 20px 50px 20px 20px;*/ 
-    border-top: 1px solid black;
+    border-bottom: 2px solid black;
+    /*width: 70%;
     background-color: rgba(240, 239, 237, 0.55);
+*/    
 }
 
 .blog-title {
@@ -103,9 +113,8 @@ color: #66CDAA;
 .post-pic {
     height: 200px;
     float: left;
-    margin-right: 10px;
-    margin-bottom:5px;
-    margin-top: 10px;
+    margin: 10px;
+    border: 1.75px solid black
 }
 
 .footer a:link {
@@ -123,6 +132,7 @@ font-size: 20px;
 
 .footer {
   clear: left;
+  position: relative;
   height: 100px;
     width: 100%;
     margin: 20px auto;
