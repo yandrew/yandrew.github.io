@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Andrew's Blog</title>
+<link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+</head>
+<body background="../imgs/wood_background.jpg">
+
+    <div class="header">
+       <img id="face-pic" src="../imgs/profile-face.jpg"/>
+        <FORM id="home_button" METHOD="LINK" ACTION="http://yandrew.github.io/">
+        <INPUT TYPE="submit" VALUE="Home">
+        </FORM>
+        <FORM id="home_button" METHOD="LINK" ACTION="http://yandrew.github.io/blog/index.html">
+        <INPUT TYPE="submit" VALUE="Blogs">
+        </FORM>
+    <p id="blogsite-title"><!--Blog Title-->Reflections</p>
+    </div>
+
+<!-- end of header -->
+    <div class="center-wrapper">
+    <div class="blog-post">
+        <!-- Uncomment for pic here <img class="post-pic" src="../imgs/the_thinker.jpg"/> -->
+        <h2 class="blog-title"><!-- Blog title --><a href="c3_thinking-style.html">Ruby Enumerable#cycle method </a></h2>
+        <h5>DBC Phase 0 Week #4</h5>
+        <p><!-- date -->November 21, 2014</p>
+        <p id="content"> 
+            <!-- insert content here -->
+            The Enumerable#cycle method goes through list (array, hash..etc) n number of times and calls a block of things to do on each element or it returns a enumerator if there is no block. I'll explain what this means this enumerator is later on. 
+        </p>
+        <p><pre class="prettyprint">
+        months = ["January", "February", "March"]
+
+        months.cycle(2) {|x| puts x }
+
+        #=>
+        January
+        February
+        March
+        January
+        February
+        March </pre>
+        </p>
+        
+        <p class="content">
+            Here months is an array of 3 strings. It cycles through the array 2 times and when going over each element it prints the element. If I took out the "(2)" and left it blank it would do an infinite loop and continue to cycle through the array. 
+        </p>
+        <p><pre class="prettyprint">
+        which_month = months.cycle
+
+        => #<Enumerator: ["January", "February", "March"]:cycle>
+
+        which_month.next
+        => "January"
+
+        which_month.next
+        => "February"
+
+        which_month.next
+        => "March"
+
+        which_month.next      #it cycles back to the beginning of the list
+        => "January"
+
+        which_month.next
+        => "February"
+
+        which_month.rewind        #makes it start back at the top of the list
+        => #<Enumerator: ["January", "February", "March"]:cycle>
+
+        which_month.next
+        => "January"
+            </pre>
+        </p>
+        <p class="content">
+        Here I didn't add any arguments to the cycle method. I made a new variable "which_month" and pointed to cycle the months list. This turned the array into a enumerator. I am now able to use the ".next" method on the variable and it'll return the next item in the list, starting from the top. ".rewind" makes it go back to the beginning of the array. 
+        Why would making it into an enumerator useful? Here's an example:
+        </p>
+       <p>
+           <pre class="prettyprint">
+                days = [31, 28, 31]      #Let's pretend it's not a leap year
+                days_cycle = days.cycle
+                which_month.rewind              #We want to make sure we start at the
+                                                beginning of the array
+                3.times do
+                    month = which_month.next
+                    days_of_month = days_cycle.next
+                    puts "#{month} has #{days_of_month} in the month."
+                end
+
+                #=> 
+                January has 31 in the month.
+                February has 28 in the month.
+                March has 31 in the month.
+           </pre>
+       </p>
+
+
+
+        <p class="content">
+        Using the Enumerator#cycle method on both arrays, I was able to use both lists to make a combined output. Now go try to use these methods. 
+        <!-- next paragraph -->
+            <span  class="link-readmore">
+                <a class="readmore" href="c3_thinking-style.html">
+                <!-- read more --></a>
+            </span>
+        </p>
+    </div>
+
+
+    </div> <!--center-wrapper-->
+
+
+<!-- footer -->
+
+
+
+    <div class="footer clearfix">
+        <a href="www.linkedin.com/in/yandrew/"><img class="footer-icon" src="../imgs/linkedin.png"/></a>
+        <a href="https://twitter.com/yandrew"><img class="footer-icon" id="twitter" src="../imgs/Twitter_logo.png"/></a>
+        <a href="https://github.com/yandrew"><img id="github" class="footer-icon" src="../imgs/GitHub_Logo.png"/></a>
+        <a id="email" href="mailto:yandrew@gmail.com">Email me</a>
+    </div>
+
+
+</body>
+</html>
