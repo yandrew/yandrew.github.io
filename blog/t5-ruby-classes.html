@@ -21,84 +21,101 @@
     <div class="center-wrapper">
     <div class="blog-post">
         <!-- Uncomment for pic here <img class="post-pic" src="../imgs/the_thinker.jpg"/> -->
-        <h2 class="blog-title"><!-- Blog title --><a href="c3_thinking-style.html">Ruby Enumerable#cycle method </a></h2>
-        <h5>DBC Phase 0 Week #4</h5>
-        <p><!-- date -->November 21, 2014</p>
-        <p id="content"> 
+        <h2 class="blog-title"><!-- Blog title --><a href="t5-ruby-classes.html">Ruby Classes</a></h2>
+        <h5>DBC Phase 0 Week #5</h5>
+        <h5><!-- date -->November 30, 2014</h5>
+        <p class="content"> 
             <!-- insert content here -->
-            The Enumerable#cycle method goes through list a (array, hash..etc) n number of times and calls a block of things to do on each element or it returns a enumerator if there is no block. I'll explain what this means this enumerator is later on. 
+            &nbsp;&nbsp;&nbsp;&nbsp;How do you organize all the code in a program written in Ruby? You can put your methods and lines of code into a package like a box containing similar items. You put all similar methods into a class so that they can be referenced later without typing out all the same lines of code again. In programming there is a motto "Never Repeat Yourself." You want to make the computer work for you and not the other way around. This is also why you make loops because the computer is good at repeating tasks. <br>
+            <br>
+            Let's look at an example with ordering food. 
+
         </p>
         <p><pre class="prettyprint">
-        months = ["January", "February", "March"]
+        
+        class Dinner
+            def initialize(appetizer, entree, dessert)
+                @appetizer = appetizer
+                @entree = entree
+                @dessert = dessert
+            end
+            puts "Hi, welcome to The Playground"
+        end
 
-        months.cycle(2) {|x| puts x }
-
-        #=>
-        January
-        February
-        March
-        January
-        February
-        March </pre>
+        </pre>
         </p>
         
         <p class="content">
-            Here months is an array of 3 strings. It cycles through the array 2 times and when going over each element it prints the element. If I took out the "(2)" and left it blank it would do an infinite loop and continue to cycle through the array. 
+            &nbsp;&nbsp;&nbsp;&nbsp;Here we define a class called Dinner (the name of the class must be capitalized). We create a method called method called initialize. If you have any arguments you want input into the class, this is where you label the arguments. You put the names of the arguments in parentheses after "initialize" with a comma after each argument if there is more than one. Here I have "appetizer", "entree", and "dessert". In order to use these variables across all methods anywhere in this Dinner class, I have to use an instance variable. This is denoted by an "@" before a variable name. So I created 3 instance variables equal to the arguments the user inputs when creating the class. When I run the program nothing happens. Nothing happens because I haven't called the class. <br><br>
+
+            We can do that by adding this line outside the class and running it:
+
+
         </p>
         <p><pre class="prettyprint">
-        which_month = months.cycle
+        
+        the_playground = Dinner.new("Calamari", "Maple Glazed Porkchop", "Black Mission Fig Sticky Toffee Pudding")
 
-        => #<Enumerator: ["January", "February", "March"]:cycle>
 
-        which_month.next
-        => "January"
+        #=> 
+        Hi, welcome to The Playground
 
-        which_month.next
-        => "February"
-
-        which_month.next
-        => "March"
-
-        which_month.next      #it cycles back to the beginning of the list
-        => "January"
-
-        which_month.next
-        => "February"
-
-        which_month.rewind        #makes it start back at the top of the list
-        => #<Enumerator: ["January", "February", "March"]:cycle>
-
-        which_month.next
-        => "January"
             </pre>
         </p>
         <p class="content">
-        Here I didn't add any arguments to the cycle method. I made a new variable "which_month" and pointed to cycle the months list. This turned the array into a enumerator. I am now able to use the ".next" method on the variable and it'll return the next item in the list, starting from the top. ".rewind" makes it go back to the beginning of the array. 
-        Why would making it into an enumerator useful? Here's an example:
+            Here, we created a new object with the class "Dinner" and put 3 arguments. We saved this to the variable "the_playground". This is actually the name of one my favorite restaurants in Southern California. It displays the welcome message when we ran it. <br><br>
+
+
+        Let's make it print out the items that we ordered. 
+
         </p>
        <p>
            <pre class="prettyprint">
-                days = [31, 28, 31]      #Let's pretend it's not a leap year
-                days_cycle = days.cycle
-                which_month.rewind              #We want to make sure we start at the
-                                                beginning of the array
-                3.times do
-                    month = which_month.next
-                    days_of_month = days_cycle.next
-                    puts "#{month} has #{days_of_month} in the month."
-                end
+        class Dinner
+            def initialize(appetizer, entree, dessert)
+                @appetizer = appetizer
+                @entree = entree
+                @dessert = dessert
+            end
+            puts "Hi, welcome to The Playground"
+            def server
+                puts "What would you like to have this evening?"
+            end
+           
+            def order
+                puts "I would like to have the #{@appetizer} for an appetizer."
+                puts "I would like to have the #{@entree} for my main course."
+                puts "I would like to have the #{@dessert} for dessert."
+            end
+           
+        end
+ 
+        the_playground = Dinner.new("Calamari", "Maple Glazed Porkchop", "Black Mission Fig Sticky Toffee Pudding")
+         
+        the_playground.server
+        the_playground.order
 
-                #=> 
-                January has 31 in the month.
-                February has 28 in the month.
-                March has 31 in the month.
+        #=>
+        Hi, welcome to The Playground 
+        What would you like to have this evening? 
+        I would like to have the Calamari for an appetizer.
+        I would like to have the Maple Glazed Porkchop for my main course. 
+        I would like to have the Black Mission Fig Sticky Toffee Pudding for dessert.
+
            </pre>
        </p>
 
 
 
         <p class="content">
-        Using the Enumerator#cycle method on both arrays, I was able to use both lists to make a combined output. Now go try to use these methods. 
+        We added a new method called "order" that puts the dish you want to order. In each sentence we reference the instance variable, which can be use used across methods in the same class. 
+        <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;We also added two more lines at the bottom that called the method "server" and "order" on "the_playground" variable. These methods that we defined within the class are called instance methods.  These methods are only accessible to an object that is "Dinner" class. They can't be used outside the class. <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;Classes keep your code organized. You can think each class as mini specialized robots. Each class has a set of instructions like a robot. Each robot is specialized to do its own set of tasks. You can call on one robot or a couple robots to do certain tasks. This is much more efficient then making one big robot to do everything. In the programming world, it's much easier to change or fix an error in a specific class than in a huge program. 
+        <br><br>
+        By the way, I have no idea how I went from food to robots. Maybe in the future, robots will be serving you food.
+
         <!-- next paragraph -->
             <span  class="link-readmore">
                 <a class="readmore" href="c3_thinking-style.html">
