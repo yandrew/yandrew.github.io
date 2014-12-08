@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Andrew's Blog</title>
+<link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+</head>
+<body background="../imgs/wood_background.jpg">
+
+    <div class="header">
+       <img id="face-pic" src="../imgs/profile-face.jpg"/>
+        <FORM id="home_button" METHOD="LINK" ACTION="http://yandrew.github.io/">
+        <INPUT TYPE="submit" VALUE="Home">
+        </FORM>
+        <FORM id="home_button" METHOD="LINK" ACTION="http://yandrew.github.io/blog/index.html">
+        <INPUT TYPE="submit" VALUE="Blogs">
+        </FORM>
+    <p id="blogsite-title"><!--Blog Title-->Reflections</p>
+    </div>
+
+<!-- end of header -->
+    <div class="center-wrapper">
+    <div class="blog-post">
+        <!-- Uncomment for pic here <img class="post-pic" src="../imgs/the_thinker.jpg"/> -->
+        <h2 class="blog-title"><!-- Blog title --><a href="t5-ruby-classes.html">Ruby Classes</a></h2>
+        <h5>DBC Phase 0 Week #5</h5>
+        <h5><!-- date -->November 30, 2014</h5>
+        <p class="content"> 
+            <!-- insert content here -->
+            &nbsp;&nbsp;&nbsp;&nbsp;How do you organize all the code in a program written in Ruby? You can put your methods and lines of code into a package like a box containing similar items. You put all similar methods into a class so that they can be referenced later without typing out all the same lines of code again. In programming there is a motto "Never Repeat Yourself." You want to make the computer work for you and not the other way around. This is also why you make loops because the computer is good at repeating tasks. <br>
+            <br>
+            Let's look at an example with ordering food. 
+
+        </p>
+        <p><pre class="prettyprint">
+        
+        class Dinner
+            def initialize(appetizer, entree, dessert)
+                @appetizer = appetizer
+                @entree = entree
+                @dessert = dessert
+            end
+            puts "Hi, welcome to The Playground"
+        end
+
+        </pre>
+        </p>
+        
+        <p class="content">
+            &nbsp;&nbsp;&nbsp;&nbsp;Here we define a class called Dinner (the name of the class must be capitalized). We create a method called method called initialize. If you have any arguments you want input into the class, this is where you label the arguments. You put the names of the arguments in parentheses after "initialize" with a comma after each argument if there is more than one. Here I have "appetizer", "entree", and "dessert". In order to use these variables across all methods anywhere in this Dinner class, I have to use an instance variable. This is denoted by an "@" before a variable name. So I created 3 instance variables equal to the arguments the user inputs when creating the class. When I run the program nothing happens. Nothing happens because I haven't called the class. <br><br>
+
+            We can do that by adding this line outside the class and running it:
+
+
+        </p>
+        <p><pre class="prettyprint">
+        
+        the_playground = Dinner.new("Calamari", "Maple Glazed Porkchop", "Black Mission Fig Sticky Toffee Pudding")
+
+
+        #=> 
+        Hi, welcome to The Playground
+
+            </pre>
+        </p>
+        <p class="content">
+            Here, we created a new object with the class "Dinner" and put 3 arguments. We saved this to the variable "the_playground". This is actually the name of one my favorite restaurants in Southern California. It displays the welcome message when we ran it. <br><br>
+
+
+        Let's make it print out the items that we ordered. 
+
+        </p>
+       <p>
+           <pre class="prettyprint">
+        class Dinner
+            def initialize(appetizer, entree, dessert)
+                @appetizer = appetizer
+                @entree = entree
+                @dessert = dessert
+            end
+            puts "Hi, welcome to The Playground"
+            def server
+                puts "What would you like to have this evening?"
+            end
+           
+            def order
+                puts "I would like to have the #{@appetizer} for an appetizer."
+                puts "I would like to have the #{@entree} for my main course."
+                puts "I would like to have the #{@dessert} for dessert."
+            end
+           
+        end
+ 
+        the_playground = Dinner.new("Calamari", "Maple Glazed Porkchop", "Black Mission Fig Sticky Toffee Pudding")
+         
+        the_playground.server
+        the_playground.order
+
+        #=>
+        Hi, welcome to The Playground 
+        What would you like to have this evening? 
+        I would like to have the Calamari for an appetizer.
+        I would like to have the Maple Glazed Porkchop for my main course. 
+        I would like to have the Black Mission Fig Sticky Toffee Pudding for dessert.
+
+           </pre>
+       </p>
+
+
+
+        <p class="content">
+        We added a new method called "order" that puts the dish you want to order. In each sentence we reference the instance variable, which can be use used across methods in the same class. 
+        <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;We also added two more lines at the bottom that called the method "server" and "order" on "the_playground" variable. These methods that we defined within the class are called instance methods.  These methods are only accessible to an object that is "Dinner" class. They can't be used outside the class. <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;Classes keep your code organized. You can think each class as mini specialized robots. Each class has a set of instructions like a robot. Each robot is specialized to do its own set of tasks. You can call on one robot or a couple robots to do certain tasks. This is much more efficient then making one big robot to do everything. In the programming world, it's much easier to change or fix an error in a specific class than in a huge program. 
+        <br><br>
+        By the way, I have no idea how I went from food to robots. Maybe in the future, robots will be serving you food.
+
+        <!-- next paragraph -->
+            <span  class="link-readmore">
+                <a class="readmore" href="c3_thinking-style.html">
+                <!-- read more --></a>
+            </span>
+        </p>
+    </div>
+
+
+    </div> <!--center-wrapper-->
+
+
+<!-- footer -->
+
+
+
+    <div class="footer clearfix">
+        <a href="www.linkedin.com/in/yandrew/"><img class="footer-icon" src="../imgs/linkedin.png"/></a>
+        <a href="https://twitter.com/yandrew"><img class="footer-icon" id="twitter" src="../imgs/Twitter_logo.png"/></a>
+        <a href="https://github.com/yandrew"><img id="github" class="footer-icon" src="../imgs/GitHub_Logo.png"/></a>
+        <a id="email" href="mailto:yandrew@gmail.com">Email me</a>
+    </div>
+
+
+</body>
+</html>
