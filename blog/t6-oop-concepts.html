@@ -21,106 +21,195 @@
     <div class="center-wrapper">
     <div class="blog-post">
         <!-- Uncomment for pic here <img class="post-pic" src="../imgs/the_thinker.jpg"/> -->
-        <h2 class="blog-title"><!-- Blog title --><a href="t5-ruby-classes.html">Ruby Classes</a></h2>
-        <h5>DBC Phase 0 Week #5</h5>
-        <h5><!-- date -->November 30, 2014</h5>
+        <h2 class="blog-title"><!-- Blog title --><a href="t6.-oop-concepts.html">Blocks, Procs, Lambdas</a></h2>
+        <h5>DBC Phase 0 Week #6</h5>
+        <h5><!-- date -->December 7, 2014</h5>
         <p class="content"> 
             <!-- insert content here -->
-            &nbsp;&nbsp;&nbsp;&nbsp;How do you organize all the code in a program written in Ruby? You can put your methods and lines of code into a package like a box containing similar items. You put all similar methods into a class so that they can be referenced later without typing out all the same lines of code again. In programming there is a motto "Never Repeat Yourself." You want to make the computer work for you and not the other way around. This is also why you make loops because the computer is good at repeating tasks. <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Block, Procs, and Lambdas? They're all ways to contain chunks of code that you want to run.
+            <br>Here are some examples of each:
             <br>
-            Let's look at an example with ordering food. 
-
         </p>
         <p><pre class="prettyprint">
         
-        class Dinner
-            def initialize(appetizer, entree, dessert)
-                @appetizer = appetizer
-                @entree = entree
-                @dessert = dessert
-            end
-            puts "Hi, welcome to The Playground"
+        numbers = [2,4,6]
+
+        #----Blocks-------------------------------------------
+
+        numbers.map! {|x| x}
+        #curly braces above or the do/end below contain the block
+        p numbers
+
+        numbers.map! do|x|
+          x / 2
         end
+        p numbers
+
+        #=>
+        [2, 4, 6]
+        [1, 2, 3]
 
         </pre>
         </p>
         
         <p class="content">
-            &nbsp;&nbsp;&nbsp;&nbsp;Here we define a class called Dinner (the name of the class must be capitalized). We create a method called method called initialize. If you have any arguments you want input into the class, this is where you label the arguments. You put the names of the arguments in parentheses after "initialize" with a comma after each argument if there is more than one. Here I have "appetizer", "entree", and "dessert". In order to use these variables across all methods anywhere in this Dinner class, I have to use an instance variable. This is denoted by an "@" before a variable name. So I created 3 instance variables equal to the arguments the user inputs when creating the class. When I run the program nothing happens. Nothing happens because I haven't called the class. <br><br>
+            Blocks are contained with curly braces "{ }" I'm sure you've seen these already if you've used .each or .map methods.
+            They can also be contained within a "do / end"<br><br>
 
             We can do that by adding this line outside the class and running it:
+        </p>
+        <p><pre class="prettyprint">
+        #-----Procs--------------------------------------------
+        pro = Proc.new{|x| 3 * x}
 
+        p numbers.map!(&pro) #converts pro into block before using it with .map!
+
+        pops = Proc.new { |x| x + 5}
+
+        puts "Calling pops Proc with an argument, returns: #{pops.call(3)}"
+
+        #=>
+        [3, 6, 9]
+        Calling pops Proc with an argument, returns: 8
+
+        </pre>
+        </p>
+        <p class="content">
+            Procs must be created with a "Proc.new" before the block. Procs are blocks that can be saved and called later on.
+            Here I defined a new Proc called "pro" that multiplies the variable by 3.
+            On the next line I call the pro Proc on the map! method.
+            The "&" symbol before the proc converts the proc into a block before using it with the map! method.
+            You can call Procs with the ".call(arguments)". The arguments, if any, are placed in parentheses after the call.
+            <br><br>
+        </p>
+        <p><pre class="prettyprint">
+
+        #--------Lambdas--------------------------------------
+        delta = lambda{|x|p x * 2}
+        numbers.each(&delta)
+
+        p pro.inspect
+        p delta.inspect
+
+        #=>
+        6
+        12
+        18
+        "#<Proc:0x0000000242e3a0@solution.rb:13>"
+        "#<Proc:0x0000000242de00@solution.rb:23 (lambda)>"
+        </pre></p>
+
+
+
+        <p class="content">
+            Lambdas are created almost like Procs except without the ".new"
+            <br><br>
+            If I inspect the proc and lambda I've created. It shows that both are Proc objects.
+            The lambda has a special (lambda) annotation at end. Lambas are Procs but are a specialized form.
+            <br><br>
+
+            Here's an example of a way to implement Procs / Lambdas in to methods. :
+            <br><br>
+        </p>
+        <!-- next paragraph -->
+        <p><pre class="prettyprint">
+        #------------method call ---------------
+
+        def adding_procs(x, y, proc1, proc2)
+          puts proc1.call(x,y) +  proc2.call(x,y)
+        end
+
+        adding = Proc.new{ |x,y| x + y }
+        subtracting = lambda{ |a,b| a - b }
+
+        adding_procs(10, 5, adding, subtracting)
+
+        #=>
+        20
+        3
+
+        </pre> </p>
+        <p>Here I created a method that adds the output of 2 blocks of code. It takes in a 2 variables and 2 blocks of code.
+            Within the method, I call each block with 2 arguments that are the variables of the first two arguments of the method.
+            I then add those blocks together.
+            "adding" is  a Proc that adds 2 numbers
+            "subtracting" is a Lambda that adds 2 numbers
+            Calling the "adding_procs" method with (10, 5, adding, subtracting) yields 20.
+            <br><br>
+            One difference between Procs and Lambdas is that Lambdas are stricter in the number of arguments called.
+            Procs won't be as picky when extra arguments are given.
 
         </p>
         <p><pre class="prettyprint">
-        
-        the_playground = Dinner.new("Calamari", "Maple Glazed Porkchop", "Black Mission Fig Sticky Toffee Pudding")
 
-
-        #=> 
-        Hi, welcome to The Playground
-
-            </pre>
-        </p>
-        <p class="content">
-            Here, we created a new object with the class "Dinner" and put 3 arguments. We saved this to the variable "the_playground". This is actually the name of one my favorite restaurants in Southern California. It displays the welcome message when we ran it. <br><br>
-
-
-        Let's make it print out the items that we ordered. 
-
-        </p>
-       <p>
-           <pre class="prettyprint">
-        class Dinner
-            def initialize(appetizer, entree, dessert)
-                @appetizer = appetizer
-                @entree = entree
-                @dessert = dessert
-            end
-            puts "Hi, welcome to The Playground"
-            def server
-                puts "What would you like to have this evening?"
-            end
-           
-            def order
-                puts "I would like to have the #{@appetizer} for an appetizer."
-                puts "I would like to have the #{@entree} for my main course."
-                puts "I would like to have the #{@dessert} for dessert."
-            end
-           
-        end
- 
-        the_playground = Dinner.new("Calamari", "Maple Glazed Porkchop", "Black Mission Fig Sticky Toffee Pudding")
-         
-        the_playground.server
-        the_playground.order
+        #-------number of arguments - --------
+        p adding.call(1,2,3) #no error
+        p subtracting.call(1,2,3) #returns wrong number of arguments (3 for 2)
 
         #=>
-        Hi, welcome to The Playground 
-        What would you like to have this evening? 
-        I would like to have the Calamari for an appetizer.
-        I would like to have the Maple Glazed Porkchop for my main course. 
-        I would like to have the Black Mission Fig Sticky Toffee Pudding for dessert.
+        3
+        ArgumentError: wrong number of arguments (3 for 2)
+        from solution.rb:38:in `block in <main>'
 
-           </pre>
-       </p>
+        </pre> </p>
+        <p>Here "subtracting.call(1,2,3)" returns ArgumentError: wrong number of arguments (3 for 2).
+            This means that you gave 3 arguments when only 2 was expected.
+            "adding.call(1,2,3)" doesn't give any errors even though it has 3 for 2 arguments.
+            It will give an error if only 1 argument is given when it's expecting 2 arguments.
+            <br><br>
+            Another difference between Procs and Lambdas is the way they "return" when called in a method.
+        </p>
+        <p><pre class="prettyprint">
 
+        #-----------return procs and lambdas---------
 
+        def test_returnlam
+          lam_ret = lambda do
+          puts "in lambda then return"
+          return
+        end
+          lam_ret.call
+          puts "end of test_return method"
+        end
 
-        <p class="content">
-        We added a new method called "order" that puts the dish you want to order. In each sentence we reference the instance variable, which can be use used across methods in the same class. 
-        <br><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;We also added two more lines at the bottom that called the method "server" and "order" on "the_playground" variable. These methods that we defined within the class are called instance methods.  These methods are only accessible to an object that is "Dinner" class. They can't be used outside the class. <br><br>
+        test_returnlam
+        puts ""
 
-        &nbsp;&nbsp;&nbsp;&nbsp;Classes keep your code organized. You can think each class as mini specialized robots. Each class has a set of instructions like a robot. Each robot is specialized to do its own set of tasks. You can call on one robot or a couple robots to do certain tasks. This is much more efficient then making one big robot to do everything. In the programming world, it's much easier to change or fix an error in a specific class than in a huge program. 
-        <br><br>
-        By the way, I have no idea how I went from food to robots. Maybe in the future, robots will be serving you food.
+        def test_returnproc
+          proc_ret = Proc.new do
+          puts "in Proc then return"
+          return
+        end
+          proc_ret.call
+          puts "end of test_return method"
+        end
 
-        <!-- next paragraph -->
-            <span  class="link-readmore">
-                <a class="readmore" href="c3_thinking-style.html">
-                <!-- read more --></a>
-            </span>
+        test_returnproc
+
+        #=>
+        in lambda then return
+        end of test_return method
+
+        in Proc then return
+
+        </pre></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;In test_returnlam method, I create a lambda that prints text then "return"
+            The lambda is then called and on the next line, it should print out some more text.
+            When this method is called, it returns the text as expected.
+            I created another method test_returnproc that is the exact same as the other method except a proc is used and called.
+            When this new method is called, it only printed the text in the proc and not the text at the end of the method.
+            What happened was when the "return" in the Proc was executed, it completely exited out of the block
+            and the method in which it was called. Lambdas behave differently in that when the return, they only exit
+            back to where the lambda was called and the next line of code runs.
+            <br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;After learning about Lambdas, Procs, and blocks, it seems beneficial to use Lambdas over Procs due to the
+            extra strictness of number of arguments and they way it returns. Rarely would you want to completely exit
+            out of the method that contains it. Blocks are used when you don't need to repeat that block of code
+            somewhere else in the program. Procs and especially lambdas are definitely useful in the DRY
+            (Don't Repeat Yourself) format. It allows you to save a block for later use and can be called
+            later on anywhere else in the program. Using these will help clean up your code and also let you
+            call multiple blocks at one time.  You can call a lambda/proc with an argument of another lambda / proc.
+            You can definitely get pretty complicated methods with procs and lambdas.
         </p>
     </div>
 
