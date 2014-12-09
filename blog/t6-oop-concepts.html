@@ -59,6 +59,7 @@
             We can do that by adding this line outside the class and running it:
         </p>
         <p><pre class="prettyprint">
+
         #-----Procs--------------------------------------------
         pro = Proc.new{|x| 3 * x}
 
@@ -95,8 +96,9 @@
         6
         12
         18
-        "#<Proc:0x0000000242e3a0@solution.rb:13>"
-        "#<Proc:0x0000000242de00@solution.rb:23 (lambda)>"
+        "# Proc:0x0000000242e3a0@solution.rb:13 "
+        "# Proc:0x0000000242de00@solution.rb:23 (lambda)>"
+
         </pre></p>
 
 
@@ -113,6 +115,7 @@
         </p>
         <!-- next paragraph -->
         <p><pre class="prettyprint">
+
         #------------method call ---------------
 
         def adding_procs(x, y, proc1, proc2)
@@ -181,7 +184,7 @@
           return
         end
           proc_ret.call
-          puts "end of test_return method"
+          puts "end of test_return method"  #this line doesn't get printed
         end
 
         test_returnproc
@@ -209,7 +212,7 @@
             (Don't Repeat Yourself) format. It allows you to save a block for later use and can be called
             later on anywhere else in the program. Using these will help clean up your code and also let you
             call multiple blocks at one time.  You can call a lambda/proc with an argument of another lambda / proc.
-            You can definitely get pretty complicated methods with procs and lambdas.
+            You can create some intricate methods with procs and lambdas.
         </p>
     </div>
 
