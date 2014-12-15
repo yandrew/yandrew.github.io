@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Andrew's Blog</title>
+<link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+</head>
+<body background="../imgs/wood_background.jpg">
+
+    <div class="header">
+       <img id="face-pic" src="../imgs/profile-face.jpg"/>
+        <FORM id="home_button" METHOD="LINK" ACTION="http://yandrew.github.io/">
+        <INPUT TYPE="submit" VALUE="Home">
+        </FORM>
+        <FORM id="home_button" METHOD="LINK" ACTION="http://yandrew.github.io/blog/index.html">
+        <INPUT TYPE="submit" VALUE="Blogs">
+        </FORM>
+    <p id="blogsite-title"><!--Blog Title-->Reflections</p>
+    </div>
+
+<!-- end of header -->
+    <div class="center-wrapper">
+    <div class="blog-post">
+        <!-- Uncomment for pic here <img class="post-pic" src="../imgs/the_thinker.jpg"/> -->
+        <h2 class="blog-title"><!-- Blog title --><a href="t6.-oop-concepts.html">Ruby vs. JavaScript - Loops</a></h2>
+        <h5>DBC Phase 0 Week #7</h5>
+        <h5><!-- date -->December 14, 2014</h5>
+        <p class="content"> 
+            <!-- insert content here -->
+            &nbsp;&nbsp;&nbsp;&nbsp;JavaScript and Ruby each have their ways of iterating through loops. Ruby has a couple methods of looping. 
+            <br>
+        </p>
+        <p><pre class="prettyprint">
+        
+        num_array = [1,2,3,4,5]
+
+        for number in num_array
+          puts number if number > 1
+        end
+
+        =>
+        2
+        3
+        4
+        5
+
+        num_array.each do |num|
+          puts num if num > 1
+        end
+
+        =>
+        2
+        3
+        4
+        5
+
+        </pre>
+        </p>
+        
+        <p class="content">
+            Here, the first method used to iterate through the elements in the array is with the "for number in num_array." I define number as each element and it does some code for each element in the array until the end of the array. It puts number if the number is greater than 1. The second method used here is using the .each method. It executes the block of code after the "each" for each element in the array. This produces the same result. The .each method is definitely more widely used in Ruby for looping. <br><br>
+
+            JavaScript is done a little bit differently. 
+        </p>
+        <p><pre class="prettyprint">
+
+        var num_array = [1,2,3,4,5]
+
+        for (var i=0; i < num_array.length; i++){
+          if (num_array[i] > 1){
+            console.log(num_array[i])
+          }
+        }
+
+        =>
+        2
+        3
+        4
+        5
+
+
+        </pre>
+        </p>
+        <p class="content">
+            Here in JavaScript, I used the for construct. JavaScript also require var before defining the variable. The for syntax is "for (var i = 0; condition; increment){block of code to execute during each loop.} I made i=0 and incremented "i" by 1 after each loop and it would keep on looping only "i" was less than the number of elements in the array where "i" is the index. The block that was run on each iteration was to print out to the console the element if the element was greater than 1. 
+            <br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Ruby seems to have a couple more methods built in for looping running blocks within arrays with access to index and the elements. The above-mentioned methods are the most basic way to iterate though the array with JavaScript and Ruby. Ruby simplifies the syntax while JavaScript requires more brackets and semicolons. 
+        </p>
+        
+    </div>
+
+
+    </div> <!--center-wrapper-->
+
+
+<!-- footer -->
+
+
+
+    <div class="footer clearfix">
+        <a href="www.linkedin.com/in/yandrew/"><img class="footer-icon" src="../imgs/linkedin.png"/></a>
+        <a href="https://twitter.com/yandrew"><img class="footer-icon" id="twitter" src="../imgs/Twitter_logo.png"/></a>
+        <a href="https://github.com/yandrew"><img id="github" class="footer-icon" src="../imgs/GitHub_Logo.png"/></a>
+        <a id="email" href="mailto:yandrew@gmail.com">Email me</a>
+    </div>
+
+
+</body>
+</html>
