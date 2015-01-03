@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JavaScript Prototypes</title>
+		<link "text/css" rel="stylesheet" href="./cheat-sheet.css">
+	</head>
+	<body>
+	<div class="wrapper">
+		<header>
+			<h1>JavaScript Prototypes</h1>
+		</header>
+		<main>
+			<h3>Preface</h3>
+			<p>This is a cheat sheet relating ruby syntax to JavaScript syntax</p>
+			<h3>What is a prototype?</h3>
+			<p>A prototype in Javascript is essentially a Class in Ruby. All objects in Javascript have prototypes. It provides a way to access methods / properties saved in objects that previously defined.</p>
+			<h3>Defining prototypes (Defining Classes)</h3>
+			<h5>JavaScript</h5>
+			<div class="code">
+			<pre>function Greeting() {</pre>
+		  <pre>   this.message = "Greetings!";</pre>
+			<pre>}</pre>
+			</div>
+			<h6>Ruby</h6>
+			<div class="code">
+			<pre>class Greeting</pre>
+			<pre>   attr_accessor :message</pre>
+			<pre>   def initialize</pre>
+			<pre>      @message = "Greetings!"</pre>
+			<pre>   end</pre>
+			<pre>end</pre>
+			</div>
+			<h3>Creating An Object</h3>
+			<h5>JavaScript</h5>
+			<div class="code">
+				<pre>var hello = new Greeting();</pre>
+			</div>
+			<h6>Ruby</h6>
+			<div class="code">
+				<pre>puts hello.message</pre>
+			</div>
+			<h3>Changing properties(attributes)</h3>
+
+			<h5>JavaScript</h5>
+			<div class="code">
+				<pre>hello.message = "Hello!";</pre>
+			</div>
+			<h6>Ruby</h6>
+			<div class="code">
+				<pre>hello.message = "Hello!"</pre>
+			</div>
+			<h3>Adding properties(attributes) to the protoype (class)</h3>
+
+			<h5>JavaScript</h5>
+			<div class="code">
+				<pre>Greeting.prototype.alternative = "Hi!"</pre>
+			</div>
+			<h6>Ruby</h6>
+			<div class="code">
+				<pre>There isn't a practical way to add attributes<br>to a class after it has been defined.</pre>
+			</div>
+		</main>
+		
+	<!--
+	Preface
+		This is a cheat sheet relating ruby syntax to JavaScript syntax
+	What is a protoype?
+		
+	Defining prototypes (Defining Classes)
+		JavaScript
+			function Greeting() {
+		  this.message = "Greetings!";
+			}
+		Ruby
+			class Greeting
+
+				attr_accessor :message
+	
+				def initialize
+					@message = "Greetings!"
+				end
+
+			end
+	
+	Creating an Object
+		JavaScript
+			var hello = new Greeting();
+
+		Ruby
+			hello = Greeting.new
+
+	Displaying properties(attributes) of an Object
+
+		JavaScript
+			console.log(hello.message);
+
+		Ruby
+			puts hello.message
+
+	Changing properties(attributes)
+
+		JavaScript
+			hello.message = "Hello!";
+
+		Ruby
+			hello.message = "Hello!"
+
+	Adding properties(attributes) to the protoype (class)
+
+		JavaScript
+			Greeting.prototype.alternative = "Hi!"
+
+		Ruby
+			There isn't a feasible way to add attributes to a class after it has been defined.
+
+
+	-->
+		<footer>
+			<table>
+				<tr>
+					<td id="left"><a class="email" href="mailto:yandrew@gmail.com">yandrew@gmail.com</a></td>
+					<td style="width:5px">|</td>
+					<td id="right"><a class="email" href="mailto:johnschulz75@gmail.com">johnschulz75@gmail.com</a></td>
+				</tr>
+				<tr>
+					<td id="left" class="author">Andrew Yan</td>
+					<td style="width:5px">|</td>
+					<td id="right" class="author">John Schulz</td>
+				</tr>
+			</table>
+		</footer>
+	</div>
+	</body>
+</html>

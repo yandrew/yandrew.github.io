@@ -1,0 +1,93 @@
+
+h1 {
+	font: Garamond, sans-serif;
+}
+
+h3{
+	font-size: 2em;
+	margin: 35px 10px;
+}
+
+h5{
+	text-shadow: 2px 2px 2px;
+	text-indent: 25px;
+	font-size: 1.3em;
+	color: rgba(21, 95, 95, 0.56);
+}
+
+h6{
+	text-shadow: 2px 2px 2px;
+	text-indent: 25px;
+	font-size: 1.3em;
+	color: rgba(173, 10, 10, 0.6);
+}
+
+header {
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+	background-color: rgba(75, 139, 139, 0.89)
+}
+
+main {
+	padding: 20px;
+  margin: 8% 15% ;
+  font: 16px/24px Helvetica, Arial, sans-serif;
+  background: #DDDDDD;
+}
+
+footer {
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	text-align: center;
+	background-color: rgba(75, 139, 139, 0.89)
+}
+
+footer table {
+	margin: 0px auto;
+}
+
+p{
+	padding: 0px 10px;
+}
+
+.author {
+	width: 180px;
+	font-weight: bold;
+	font-size: 1.2em
+}
+
+.code {
+	width: 75%;
+	background: #fafafa;
+	padding: 5px 10px;
+	margin: 10px;
+	border-radius: 12px; 
+	box-shadow: 2px 2px 9px;
+}
+
+.code pre {
+	margin: -2px inherit;
+}
+
+.email {
+	text-decoration: none;
+}
+
+.wrapper {
+	width:100%;
+	position:absolute;
+
+}
+
+#left{
+	text-align: right;
+}
+
+#right{
+	text-align: left;
+}
