@@ -21,71 +21,94 @@
     <div class="center-wrapper">
     <div class="blog-post">
         <!-- Uncomment for pic here <img class="post-pic" src="../imgs/the_thinker.jpg"/> -->
-        <h2 class="blog-title"><!-- Blog title --><a href="t7-JavaScript.html">Ruby vs. JavaScript - Loops</a></h2>
-        <h5>DBC Phase 0 Week #7</h5>
-        <h5><!-- date -->December 14, 2014</h5>
+        <h2 class="blog-title"><!-- Blog title --><a href="t8-tech.html">Regular Expressions</a></h2>
+        <h5>DBC Phase 0 Week #8</h5>
+        <h5><!-- date -->December 04, 2014</h5>
         <p class="content"> 
             <!-- insert content here -->
-            &nbsp;&nbsp;&nbsp;&nbsp;JavaScript and Ruby each have their ways of iterating through loops. Ruby has a couple methods of looping. 
+            &nbsp;&nbsp;&nbsp;&nbsp;Regular expressions (regex) is string of characters and symbols that provides a search pattern. You can search based on specific digits, characters, whitespaces before or after characters, and many more constraints. It can be a very powerful tool. These symbols are universal in most programming languages including PERL, PHP, RUBY, JavaScript and many more. There are many ways to use regex. The use of regex is commonly used in changing content of strings. These examples will be written in Ruby. 
+
+            Here's an example of regex:
+
             <br>
         </p>
         <p><pre class="prettyprint">
         
-        num_array = [1,2,3,4,5]
-
-        for number in num_array
-          puts number if number > 1
-        end
-
-        =>
-        2
-        3
-        4
-        5
-
-        num_array.each do |num|
-          puts num if num > 1
-        end
-
-        =>
-        2
-        3
-        4
-        5
+        greeting = "Apples socks ham sam bam am"
+        /sock./.match(greeting)
+        => #<MatchData "socks"> 
 
         </pre>
         </p>
         
         <p class="content">
-            Here, the first method used to iterate through the elements in the array is with the "for number in num_array." I define number as each element and it does some code for each element in the array until the end of the array. It puts number if the number is greater than 1. The second method used here is using the .each method. It executes the block of code after the "each" for each element in the array. This produces the same result. The .each method is definitely more widely used in Ruby for looping. <br><br>
-
-            JavaScript is done a little bit differently. 
+            Regular Expressions are always contained inside / / (2 forward slashes). Seach constraints are placed inside the slashes. Here it will search for sock. The extra . (dot) after search term is a wildcard. It matches any one character, so it searches for sock plus an extra character that happens to be an "s". It returned "socks".<br><br>
+            Using the same greetings string, we can find the index of the beginning of found match.
         </p>
         <p><pre class="prettyprint">
-
-        var num_array = [1,2,3,4,5]
-
-        for (var i=0; i < num_array.length; i++){
-          if (num_array[i] > 1){
-            console.log(num_array[i])
-          }
-        }
-
-        =>
-        2
-        3
-        4
-        5
-
+        
+        >> p greeting =~ /ham/
+        => 13
 
         </pre>
         </p>
         <p class="content">
-            Here in JavaScript, I used the for construct. JavaScript also require var before defining the variable. The for syntax is "for (var i = 0; condition; increment){block of code to execute during each loop.} I made i=0 and incremented "i" by 1 after each loop and it would keep on looping only "i" was less than the number of elements in the array where "i" is the index. The block that was run on each iteration was to print out to the console the element if the element was greater than 1. 
+            Here =~ is used to check if there is a match with the regular expressions, if there is, it returns the index of "ham" which starts at the 13th index in the original string. 
             <br><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Ruby seems to have a couple more methods built in for looping running blocks within arrays with access to index and the elements. The above-mentioned methods are the most basic way to iterate though the array with JavaScript and Ruby. Ruby simplifies the syntax while JavaScript requires more brackets and semicolons. 
+            &nbsp;&nbsp;&nbsp;&nbsp;What if we want to be more specific in the search besides the (.) wildcard? The following demonstrates a character class, which is a list of characters placed inside brackets.
         </p>
+
+
+        <p><pre class="prettyprint">
+
+        p greeting.scan(/[hb]am/)
+        #=> ["ham", "bam"]  
         
+        </pre></p>
+        
+        <p class="content">
+            .scan method looks through the string and places all matches into an array. Here we're looking for either "ham" or "bam". The [hr] denotes that it must be either "h" or "r". Not both or none. Each bracket only looks for one character. Scan can be very useful for accessing your matches by keeping them in a list. 
+            <br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Replacing certain parts of a string is one common use of regex. 
+        </p>
+
+
+        <p><pre class="prettyprint">
+        
+        >> listing = "Yan,Andrew, 949-234-9932"
+        >> result = string.gsub(/\D+/, "")
+        >> puts result
+        => 9492349932 
+        
+        >> p name = /(\w+),\s?(\w+)/.match(string)
+        #=> #<MatchData "Yan,Andrew" 1:"Yan" 2:"Andrew"> 
+        
+        >> puts "#{name[2]} #{name[1]}" 
+        => Andrew Yan 
+        
+        </pre></p>
+        
+        <p class="content">
+            Here, I created a string with my name and a phone number. I want to be able to retrieve only all the numbers from the string. I use the .gsub method which searches for all matches and replaces them with the specified change. The \D means non-digits characters. The + after means: one or more of whatever preceded the +, which was \D (non-digit character). I give it a parameter of "" so it replaces all non-Digit characters with nothing, which gets rid of the white space. I end up with just the numbers.
+            <br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;There are other ways of accessing matches found bedsides using .scan. 
+        </p>
+        <p><pre class="prettyprint">
+        
+        >> p name = /(\w+),\s?(\w+)/.match(listing)
+        #=> #<MatchData "Yan,Andrew" 1:"Yan" 2:"Andrew"> 
+        
+        >> puts "#{name[2]} #{name[1]}" 
+        => Andrew Yan 
+        
+        </pre></p>        
+        <p class="content">
+            Here, I'm searching for a word a comma, possible space then another word. \w+ is one or more of word character (letter,number, underscore). \s is whitespace. The ? after anything means 0 or one of what preceded it. \s? means there may or may not be a space. I also placed each \w+ in parentheses. This is so I can access them later. The match can be accessed by using bracket notation on the variable pointing to the match method. Here I printed out the name in order. 
+            <br><br>
+            <br><br>&nbsp;&nbsp;&nbsp;&nbsp;There's many more special characters that I didn't go over. You can get searches that only start from the beginning of a line or terms that are only at the end of a string. Here's a cool site that let's you try out regular expressions on your own. <a href="http://rubular.com/">Rubular</a> There's also a key on the bottom that shows a lot of the special characters and explain what they do. 
+
+            &nbsp;&nbsp;&nbsp;&nbsp;These examples are just a couple small things you can do with regular expressions. Once regular expressions concepts are solidified, they can be carried across most languages, which will be very beneficial. 
+        </p>
     </div>
 
 
