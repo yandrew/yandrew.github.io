@@ -359,7 +359,7 @@ strong {
 }
 
 #preloader {
-    background: #FFF url('../img/loading.gif') center center no-repeat;
+    background: #FFF url('../img/loading.GIF') center center no-repeat;
     position:fixed;
     top:0;
     left:0;
@@ -1146,7 +1146,7 @@ strong {
        -moz-transition-duration: 1.2s;
         -ms-transition-duration: 1.2s;
          -o-transition-duration: 1.2s;
-1           transition-duration: 1.2s;
+            transition-duration: 1.2s;
 
 .isotope1 
     -webkt-transition-property: heigh1t, width;
