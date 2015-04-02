@@ -359,7 +359,7 @@ strong {
 }
 
 #preloader {
-    background: #FFF url('../img/loading.GIF') center center no-repeat;
+    background: black url('../img/loading2.GIF') center center no-repeat;
     position:fixed;
     top:0;
     left:0;
@@ -538,7 +538,7 @@ strong {
 }
 
 
-#home .bg-parallax{			background: url('../img/background/Andrew Yan - cdm bouldering.jpg');}
+#home .bg-parallax{			background: url('../img/background/lighthouse.jpg');}
 #site-counter .bg-parallax{	background: url('../img/background/counter.jpg');}
 #tweets .bg-parallax{		background: url('../img/background/tweet.jpg');}
 #process .bg-parallax{		background: url('../img/background/process.jpg');}
@@ -627,6 +627,14 @@ strong {
 {
 	font-size: 16px;
 	font-family: 'Robotothin', Helvetica, Arial, sans-serif;
+	color: #fff;
+	text-align: center;
+}
+
+.home-slider-description
+{
+	font-size: 32px;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 	color: #fff;
 	text-align: center;
 }

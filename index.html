@@ -7,15 +7,15 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Andrew Yan, an outdoor enthusiast, photographer, mountain biker, web developer student at DevBootCamp.">
-    <meta name="keywords" content="Andrew Yan, Andrew C Yan, Andrew Christopher Yan, Yan, yandrew, HTML, CSS, JS, JavaScript, framework, ruby, front-end, frontend, back-end, backend, web developer, ruby on rails, photographer">
+    <meta name="description" content="Andrew Yan, an outdoor enthusiast, photographer, mountain biker, full stack web developer">
+    <meta name="keywords" content="yandrew, Andrew Yan, Andrew C Yan, Andrew Christopher Yan, Yan, yandrew, HTML, CSS, JS, JavaScript, framework, ruby, front-end, frontend, back-end, backend, web developer, ruby on rails, photographer">
     <meta name="author" content="Andrew Yan">
 
     <!-- CSS -->
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-      <!--<link href="css/font-awesome.min.css" rel="stylesheet">-->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+      <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/icons.css" rel="stylesheet">
     <link href="css/jquery.bxslider.css" rel="stylesheet">
     <link href="css/effect.css" rel="stylesheet">
@@ -32,7 +32,7 @@
   </head>
   <body class="onepage">
 
-    <!--<div id="preloader"></div>-->
+    <!-- <div id="preloader"></div> -->
     <a id="top"></a>
 
     <!-- HEADER -->
@@ -52,16 +52,19 @@
                 <div class="home-text-slider pad-top2">
                   <ul class="bxslider" data-auto="true" data-controls="false" data-pager="false">
                     <li><span>Andrew Yan </span></li>
-                    <li><span>Web Developer </span> DBC Student </li>
+                    <li><span>Full Stack Web Developer </span> DBC Graduate </li>
                     <li><span>Photographer </span> Outdoor Enthusiast</li>
                   </ul>
                 </div>
-                  <div class="riz-text"><br>
-                    Andrew Yan is full stack web developer. He is currently a student at Dev Bootcamp.
-                </div>
+                  <div class="home-slider-description"><br>
+                    Andrew Yan is full stack web developer. He is recently graduated from an immersive web developer program.
+                  </div>
+
                 <div class="center-text up-social">
+                  <ul class="socicals-u"><li><a href="#portfolio"class="icon-code"></a></li></ul>
+                  <a href="#portfolio"><span class="home-slider-description">Portfolio</span></a>
                 <ul class="socicals-u">
-                  <li><a href="https://www.linkedin.com/in/yanandrew" class="icon-linkedin"></a></li>
+                  <li><a href="https://www.linkedin.com/in/yandrew" class="icon-linkedin"></a></li>
                   <li><a href="https://github.com/yandrew" class="icon-github"></a></li>
                   <li><a href="https://twitter.com/yandrew" class="icon-twitter"></a></li>
                   <li><a href="https://www.flickr.com/photos/yandrewphotography/" class="icon-flickr "></a></li>
@@ -104,7 +107,7 @@
               <h1 data-animated="bounceIn">I'm Andrew Yan</h1>
               <img src="img/lina.png" alt="" data-animated="bounceIn">
             </div>
-            <h1 class="under-l" data-animated="bounceIn">I'm currently attending <strong>Dev Bootcamp</strong> I'm a full stack web developer with knowledge in <strong>Ruby, Javascript, HTML, CSS</strong> and <strong>JQuery</strong>. When I'm not coding I like to enjoy the outdoors and also photography.  </h1>
+            <h1 class="under-l" data-animated="bounceIn">I recently graduated from<strong>Dev Bootcamp</strong>, an immersive web developer program. I'm a full stack web developer with knowledge in <strong>Ruby, Javascript, HTML/CSS, Rails, AngularJS</strong> and <strong>JQuery</strong>. When I'm not coding I like to enjoy the outdoors and also photography.  </h1>
           </div>
         </div>
 
@@ -120,7 +123,7 @@
               <div class="service-icon" data-animated="fadeInRight">
                   <span class="fa fa-code"></span>
                   <h3>Skills</h3>
-                  <p><strong>Ruby, Javascript, HTML, CSS, Git, MySQL</strong> and <strong>JQuery</strong></p>
+                  <p><strong>Ruby, Javascript, HTML, CSS, Ruby on Rails, AngularJS, Heroku, Git, MySQL</strong> and <strong>JQuery</strong></p>
               </div>
             </div>
 
@@ -160,7 +163,7 @@
               <h1>The Blog</h1>
               <img src="img/lina.png" alt="" data-animated="bounceIn">
               </div>
-            <h1 class="under-l" data-animated="bounceIn">Check out some previous <strong>blog entries</strong> </h1>
+            <h1 class="under-l" data-animated="bounceIn">Check out some previous <a href="../blog/index.html"><strong>blog entries</strong></a></h1>
           </div>
         </div>
       </div>
@@ -454,13 +457,17 @@
               <h1 data-animated="bounceIn">Portfolio</h1>
               <img src="img/lina.png" alt="" data-animated="bounceIn">
             </div>
-            <h1 class="under-l" data-animated="bounceIn"><strong> Coming Soon.. </strong></h1>
+            <ul>
+              <li><h1 class="under-l" data-animated="bounceIn"><strong><span class="fa fa-money"></span><a href="http://sellme.us.s3-website-us-west-1.amazonaws.com/"> SellMe - Team Project</a></strong></h1></li>
+              <li><h1 class="under-l" data-animated="bounceIn"><strong><span class="fa fa-gamepad"></span><a href="http://dbc-phase2-connect4.herokuapp.com/"> Connect 4 - Team Project</a></strong></h1></li>
+              <li><h1 class="under-l" data-animated="bounceIn"><strong><span class="fa fa-instagram"></span><a href="https://webstamap.herokuapp.com/"> Webstamap - Individual</a></strong></h1></li>
+            </ul>
           </div>
         </div>
 
       </div>
-
-      <!--<div id="portfolio-wrap">
+<!-- greyed out -->
+<!--       <div id="portfolio-wrap">
         <div id="portfolio-page">
           <div id="portfolio-content">
             <div class="container"> 
@@ -594,7 +601,9 @@
         </article>
 
 
-      </div>-->
+      </div> -->
+
+  <!-- end grey out -->
     </section>
 
     <!-- /PORTFOLIO -->
@@ -670,7 +679,7 @@
               <img src="img/lina.png" alt="" data-animated="bounceIn">
             </div>
             
-            <h1 class="under-ll" data-animated="bounceIn">Yandrew@gmail.com</h1>
+            <a href="mailto:yandrew@gmail.com"><h1 class="under-ll" data-animated="bounceIn"><strong>Yandrew@gmail.com</strong></h1></a>
             
           </div>
         </div>
@@ -727,7 +736,7 @@
           <div class="row">
               <div class="col-md-6 col-sm-6 col-xs-6">
                 <p id="copyright">
-                  <i class="fa fa-space-shuttle fa-spin"></i> Andrew Yan
+                  <i class=""></i> Andrew Yan
                 </p>
               </div>
               <div class="col-md-6 col-sm-6 col-xs-6">
