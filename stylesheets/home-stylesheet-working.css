@@ -33,15 +33,17 @@ nav a {
  -webkit-transition:all 200ms ease-out;
 }
 
-nav:hover {
 
-}
 
 nav a:hover {
   background:#11CDA9;
   flex-grow:1.8;
   letter-spacing:0.25em;
  -webkit-tran sition:all 200ms ease-out;
+}
+
+.post {
+  background-color: blue;
 }
 
 @media (min-width:801px) and (max-width:1300px) {
