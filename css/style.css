@@ -577,6 +577,9 @@ strong {
 	background: rgba(86,157,255,1);
 	color: #FFF;
 }
+.up-social a span:hover{
+	color: #0074ED;
+}
 
 
 /* ------------------ 4.Header------------------ */
@@ -1139,6 +1142,10 @@ strong {
     text-transform: uppercase;
 }
 
+.portfolio-links a:hover{
+	color: #0074ED;
+}
+
 
 
 .isotope-hidden.isotope-item{
@@ -1247,6 +1254,9 @@ strong {
 	background:#FFF;
 	padding: 20px;
 	pointer-events: auto;
+}
+#contact a strong:hover{
+	opacity: .5;
 }
 .contact-info{
 	list-style: none;

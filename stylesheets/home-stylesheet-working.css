@@ -7,49 +7,74 @@ body {
 
 .footer{
   text-align:center;
+  margin-bottom: 50px;
 }
 .footer-icon {
-  height:75px;
+  height:50px;
+}
+
+.footer-icon:hover{
+    height: 65px;
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
 }
 
 
 nav {
-  background:#222;
+  text-align: center;
+  background:#fff;
   width:100%;
-  height: 100px;
+  /* height: 29px; */
   display:flex;
-  margin:10% auto;
-  border-bottom:#1a1a1a solid 4px;
+  margin-top: 0px;
+  /* margin-bottom: 25px; */
+  /* border-bottom:#111111 solid 4px; */
 }
 
 nav a {
-  color:#fff;
+  color:#11cda9;
   text-decoration:none;
-  padding:1em;
-  flex-grow:0.5;
+  /* margin: 1em; */
+  padding:.75em;
+  /* flex-grow:0.5; */
   text-align:center;
   text-transform:uppercase;
   font-size:1.2em;
  -webkit-transition:all 200ms ease-out;
+ -moz-transition: all 200ms ease-out;
+ -o-transition: all 200ms ease-out;
 }
 
 
 
 nav a:hover {
   background:#11CDA9;
-  flex-grow:1.8;
+  /* flex-grow:1.8; */
   letter-spacing:0.25em;
- -webkit-tran sition:all 200ms ease-out;
+ -webkit-transition: all 200ms ease-out;
+ -moz-transition: all 200ms ease-out;
+ -o-transition: all 200ms ease-out;
 }
 
-.post {
-  background-color: blue;
-}
+.portfolio img {
+  border: 1px solid rgb(217, 217, 217);
+  border-radius: 6px;
+  text-align: center;
+    }
+    .portfolio img:hover{
+        opacity: 0.5;
+    }
 
-@media (min-width:801px) and (max-width:1300px) {
+.top-buffer { margin-top:20px; }
+
+
+
+/* @media (min-width:801px) and (max-width:1300px) {
   nav a {font-size:1em;}
 }
 
 @media (max-width:600px) {
   nav {flex-direction:column;width:100%;}
-}
+} */
